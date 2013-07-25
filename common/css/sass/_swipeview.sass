@@ -1,0 +1,86 @@
+#carousel-wrapper
+	width: 100%
+	min-width: 320px
+	height: 100%
+#carousel-nav 
+	+border-radius(10px)
+	position: absolute
+	z-index: 100
+	top: 8px
+	width: 200px
+	height: 20px
+	left: 50%
+	top: 80px
+	background: rgba(0,0,0,0.75)
+	padding: 0
+	margin: 0 0 0 -100px
+	li 
+		+border-radius(7px)
+		display: block
+		float: left
+		width: 14px
+		height: 14px 
+		line-height: 14px
+		background: rgba(255,255,255,0.1)
+		overflow: hidden
+		padding: 0
+		margin: 3px 11px 0 0
+		text-align: center
+		&#prev 
+			margin-left: 5px
+			background: transparent
+		&#next 
+			margin-right: 0
+			background: transparent
+		&.selected 
+			background: rgba(255,255,255,0.4)
+#swipeview-slider 
+	> div 
+		+display-box
+		+box-orient(vertical)
+		+box-pack(center)
+		+box-align(center)
+		position: relative
+		overflow: hidden
+	img 
+		+transition-duration(0.4s)
+		+transition-property(opacity)
+		+border-radius(2px)
+		+box-shadow(#666 0 2px 6px)
+		display: block
+		border: 5px solid #eee
+		opacity: 1
+		pointer-events: none
+		margin: 0 auto
+		max-width: 600px * $resolution-scalar
+		max-height: 800px * $resolution-scalar
+	span 
+		+transition-duration(0.3s)
+		+transition-property(transform)
+		+translate(0, 100%)
+		+opacity(0.8)
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		padding: 20px 0
+		display: block
+		background: $section-header-blue
+		text-align: center
+		border-top: 1px solid rgba(255,255,255,0.2)
+		h3
+			padding-bottom: 0.5em
+	.swipeview-active span
+		+translate(0, 0) 
+#carousel-wrapper > div > .swipeview-loading 
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444), to(#555)), -webkit-gradient(linear, 0 0, 100% 0, from(#777), to(#777))
+	background-position: 50% 50%, 50% 50%
+	background-size: 200px 140px, 210px 150px
+	background-repeat: no-repeat
+#carousel-wrapper > div > .swipeview-loading img,
+#swipeview-slider img.loading 
+	-webkit-transition-duration: 0s
+	opacity: 0
+#carousel-wrapper > div > .swipeview-loading span 
+	+transition-duration(0s)
+	+translate(0, 100%)

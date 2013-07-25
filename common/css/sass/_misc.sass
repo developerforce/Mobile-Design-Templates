@@ -1,0 +1,97 @@
+.splash
+	+background-image(radial-gradient(100px 100px, $menu-blue 10px, $link-blue 300px))
+	#app-content
+		position: absolute
+		width: 100%
+		height: 100%	
+		padding-top: 0
+		.splash-screen-wrapper	
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			width: 100%
+			height: 200px
+			margin: auto
+			.content
+				display: block
+				position: relative
+				width: 100%
+				height: 100%
+				text-align: center
+				color: #fff
+.week-planner
+	display: block
+	position: relative
+	width: 100%
+	li
+		display: block
+		position: relative
+		width: 100%
+		padding: $gutter * $resolution-scalar
+		height: ($calendar-dot-size + 2 * $gutter) * $resolution-scalar
+		.date
+			display: block
+			position: absolute
+			font-weight: bolder
+			left: $gutter-half * $resolution-scalar
+			top: $gutter * $resolution-scalar
+	li.on
+		background-color: #eee
+		background-image: url(../images/week-planner-bg.png)
+		background-position: right center
+		background-size: image-width("week-planner-bg.png") * $resolution-scalar image-height("week-planner-bg.png") * $resolution-scalar
+		background-repeat: no-repeat
+.week-planner-items
+	display: block
+	position: relative
+	padding-left: $gutter * 3 * $resolution-scalar
+	height: $calendar-dot-size * $resolution-scalar
+	li
+		+border-radius($calendar-dot-size / 2 * $resolution-scalar)
+		display: block
+		position: relative
+		float: left
+		width: $calendar-dot-size * $resolution-scalar
+		height: $calendar-dot-size * $resolution-scalar
+		padding: 0
+		margin-right: $calendar-dot-size / 3 * $resolution-scalar
+		&.event
+			background-color: $event-color
+		&.task
+			background-color: $task-color
+.date-content
+	display: none
+	p
+		padding-bottom: $gutter * $resolution-scalar
+.modal
+	display: none
+	position: fixed
+	width: 100%
+	height: 100%
+	z-index: 100
+	.background
+		+opacity(.8)
+		display: block
+		position: absolute
+		width: 100%
+		height: 100%
+		background-color: $menu-blue
+	.modal-content-wrapper
+		display: block
+		position: absolute
+		width: 100%
+		height: 100%
+		padding: $gutter * 2 * $resolution-scalar
+		.modal-content 
+			display: block
+			position: relative
+			width: 100%
+			height: 100%
+			background-color: #fff
+
+
+
+

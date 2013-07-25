@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Settings Screen Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../common/css/app.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="../common/js/main.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="app-wrapper">
+
+<nav id="main-menu" class="main-menu">
+<a href="#">Something</a>
+<a href="#">Something</a>
+<a href="#">Something</a>
+</nav><!--#main-menu-->
+
+<header>
+<div id="main-menu-button-left" class="main-menu-button main-menu-button-left"><a class="left-arrow">&nbsp;</a></div>
+<div id="main-menu-button-right" class="main-menu-button main-menu-button-right"><a class="gear">&nbsp;</a></div>
+<h1>Settings</h1>
+</header>
+
+<div id="app-content">
+
+<form>
+
+<div class="list-view-header">Screen Security</div>
+<section>
+    <div class="content">
+        <div class="span-66 settings settings-left">
+            <h3>Screen Lock</h3>
+        </div><!-- .span-50 -->
+        <div class="span-33 settings settings-right">
+            <div class="form-control-group">
+                <div class="form-control form-control-toggle" data-on-label="on" data-off-label="off">
+                    <input type="checkbox" name="toggle">
+                </div>
+            </div>
+        </div><!--.span-50-->
+    </div><!-- .content -->
+</section>
+
+<div class="list-view-header">Lock Screen</div>
+<section class="border-bottom">
+    <div class="content">
+        <div class="span-66 settings settings-left">
+            <h3>Message Notification Preview</h3>
+        </div><!-- .span-50 -->
+        <div class="span-33 settings settings-right">
+            <div class="form-control-group">
+                <div class="form-control form-control-checkbox">
+                    <input type="checkbox">
+                </div>
+            </div>
+        </div><!--.span-50-->
+    </div><!-- .content -->
+</section>
+<section>
+    <div class="content">
+        <div class="span-66 settings settings-left">
+            <h3>Unlock Music Automatically</h3>
+            Listen to music stored on your device directly from lock screen
+        </div><!-- .span-50 -->
+        <div class="span-33 settings settings-right">
+            <div class="form-control-group">
+                <div class="form-control form-control-checkbox">
+                    <input type="checkbox">
+                </div>
+            </div>
+        </div><!--.span-50-->
+    </div><!-- .content -->
+</section>
+
+<div class="list-view-header">Auto Update</div>
+<section>
+    <div class="content">
+        <div class="span-66 settings settings-left">
+            <h3>Sync over WiFi</h3>
+        </div><!-- .span-50 -->
+        <div class="span-33 settings settings-right">
+            <div class="form-control-group">
+                <div class="form-control form-control-toggle" data-on-label="Yes" data-off-label="No">
+                    <input type="checkbox" name="toggle">
+                </div>
+            </div>
+        </div><!--.span-50-->
+    </div><!-- .content -->
+</section>
+
+</form>
+</div><!--#app-content-->
+</div><!--#app-wrapper-->
+
+</body>
+</html>

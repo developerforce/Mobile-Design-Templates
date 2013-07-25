@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Carousel List View Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../common/css/app.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="../common/js/swipeview.min.js"></script>
+<script src="../common/js/main.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var slides = [
+            {
+                img: '../common/images/placeholders/gallery/pic01.png',
+                width: 1017,
+                height: 699,
+                desc: '<h3>A Product</h3>$341.12'
+            },
+            {
+                img: '../common/images/placeholders/gallery/pic02.jpg',
+                width: 300,
+                height: 164,
+                desc: '<h3>A Product</h3>$341.12'
+            },
+            {
+                img: '../common/images/placeholders/gallery/pic03.jpg',
+                width: 300,
+                height: 213,
+                desc: '<h3>A Product</h3>$341.12'
+            },
+            {
+                img: '../common/images/placeholders/gallery/pic04.jpg',
+                width: 147,
+                height: 220,
+                desc: '<h3>A Product</h3>$341.12'
+            },
+            {
+                img: '../common/images/placeholders/gallery/pic05.jpg',
+                width: 300,
+                height: 213,
+                desc: '<h3>A Product</h3>$341.12'
+            },
+            {
+                img: '../common/images/placeholders/gallery/pic06.jpg',
+                width: 165,
+                height: 220,
+                desc: '<h3>A Product</h3>$341.12'
+            }
+        ];
+
+    carouselObj.init({
+        container: "#carousel-wrapper",
+        slides: slides
+    });
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="app-wrapper">
+
+<nav id="main-menu" class="main-menu">
+<a href="#">Something</a>
+<a href="#">Something</a>
+<a href="#">Something</a>
+</nav><!--#main-menu-->
+
+<header>
+<div id="main-menu-button-left" class="main-menu-button main-menu-button-left"><a class="menu">&nbsp;</a></div>
+<div id="main-menu-button-right" class="main-menu-button main-menu-button-right"><a class="gear">&nbsp;</a></div>
+<h1>Products</h1>
+</header>
+
+<div id="app-content">
+    <div id="carousel-wrapper"></div>
+</div><!--#app-content-->
+</div><!--#app-wrapper-->
+
+</body>
+</html>

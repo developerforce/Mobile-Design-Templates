@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Gauge Chart Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../common/css/app.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="../common/js/gauge.min.js"></script>
+<script src="../common/js/main.min.js"></script>
+
+
+<script>
+$(document).ready(function() {
+    reportObj.init({
+        graphType: "gauge",
+        width: 300,
+        gauge: {
+            max: 5000,
+            value: 1202
+        }
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="app-wrapper">
+
+<nav id="main-menu" class="main-menu">
+<a href="#">Something</a>
+<a href="#">Something</a>
+<a href="#">Something</a>
+</nav><!--#main-menu-->
+
+<header>
+<div id="main-menu-button-left" class="main-menu-button main-menu-button-left"><a class="left-arrow">&nbsp;</a></div>
+<div id="main-menu-button-right" class="main-menu-button main-menu-button-right"><a class="gear">&nbsp;</a></div>
+<h1>Registrations</h1>
+</header>
+
+<div id="app-content">
+
+<div class="detail-view-header">
+    <div class="content">
+        <h1>Registrations</h1>
+    </div><!--.content-->
+</div><!--.detail-view-header-->
+
+<section>
+	<div class="content">
+		<div id="graph" class="graph"></div>
+	</div><!-- .content -->
+</section>
+
+<section class="border-top">
+	<div class="content">
+		<h1 class="inline">1,202</h1> of 5,000 completed
+	</div><!-- .content -->
+</section>
+</div><!--#app-content-->
+</div><!--#app-wrapper-->
+
+</body>
+</html>

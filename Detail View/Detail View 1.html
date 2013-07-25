@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Detail View 1 Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../common/css/app.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="../common/js/main.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="app-wrapper">
+
+<nav id="main-menu" class="main-menu">
+<a href="#">Something</a>
+<a href="#">Something</a>
+<a href="#">Something</a>
+</nav><!--#main-menu-->
+
+<header>
+<div id="main-menu-button-left" class="main-menu-button main-menu-button-left"><a class="left-arrow">&nbsp;</a></div>
+<div id="main-menu-button-right" class="main-menu-button main-menu-button-right"><a class="gear">&nbsp;</a></div>
+<h1>Accounts</h1>
+</header>
+
+<div id="app-content">
+
+<div class="detail-view-header left-thumb with-action-panel">
+    <div class="content">
+        <img class="thumb" src="../common/images/placeholders/account-0.png">
+        <h1>Acme</h1>
+        <div class="detail-view-action-panel">
+            <a href="#" class="action-note open-modal">&nbsp;</a>
+            <a href="#" class="action-map open-modal">&nbsp;</a>
+        </div>
+    </div><!--.content-->
+</div><!--.detail-view-header-->
+
+<section class="border-bottom">
+    <div class="content">
+        <h3>Billing Address</h3>
+        <p>
+            1 Main Street<br/>
+            San Francisco, CA 94105<br/>
+            USA
+        </p>
+    </div>
+</section>
+
+<ul class="list-view right-one-icons large-padding">
+    <li>
+        <a href="#" class="content">
+            <h3>Opportunities</h3>
+            <div class="detail-view-table">
+                <div class="detail-view-table-row">
+                    <div class="detail-view-table-left-column">Open</div>
+                    <div class="detail-view-table-right-column">
+                        <h1>$357,000</h1>
+                    </div>
+                </div><!--.detail-view-table-row-->
+                <div class="detail-view-table-row last-child">
+                    <div class="detail-view-table-left-column">Closed</div>
+                    <div class="detail-view-table-right-column">
+                        <h1>$143,700</h1>
+                    </div>
+                </div><!--.detail-view-table-row-->
+            </div><!--.detail-view-table-->
+            <div class="list-view-icons">
+                <span class="icon-right-arrow">&nbsp;</span>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="#" class="content">
+            <h3>Cases</h3>
+            <h1 class="inline">12</h1> open cases
+            <div class="list-view-icons">
+                <span class="icon-right-arrow">&nbsp;</span>
+            </div>
+        </a>
+    </li>
+</ul>
+
+<section class="border-top">
+    <div class="content">
+       <h3>Key Contacts</h3>
+        <p>
+            <a href="#">John Stamos</a><br/>
+            IT Man
+        </p>
+        <p class="no-bottom-padding">
+            <a href="#">Jennifer Lopez</a><br/>
+            Diva
+        </p>
+    </div>
+</section>
+
+<section class="data-capture-buttons one-buttons">
+    <div class="content">
+        <a href="#">edit</a>
+    </div>
+</section><!--.data-capture-buttons-->
+
+
+</div><!--#app-content-->
+</div><!--#app-wrapper-->
+
+<div class="modal" id="modal">
+    <div class="background"></div>
+    <div class="modal-content-wrapper">
+        <div class="modal-content">
+            <div class="detail-view-header">
+                <div class="content">
+                    <h1>Header Here</h1>
+                </div><!--.content-->
+            </div><!--.detail-view-header-->
+            <section style="min-height:70%;">
+                <div class="content">
+                    <center>Content Here</center>
+                </div><!-- .content -->
+            </section>
+            <section>
+                <div class="content">
+                    <div class="data-capture-buttons two-buttons">
+                        <div class="content">
+                            <a href="#" class="close-modal">cancel</a>
+                            <a href="#" class="close-modal">submit</a>
+                        </div><!-- .content -->
+                    </div><!--.data-capture-buttons-->
+                </div><!-- .content -->
+            </section>
+        </div> <!-- .modal-content -->
+    </div><!-- .modal-content-wrapper -->
+</div><!-- #modal.modal -->
+
+</body>
+</html>

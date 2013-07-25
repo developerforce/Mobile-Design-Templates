@@ -1,0 +1,229 @@
+*
+	+box-sizing("border-box")
+html, body
+	font-family: "Helvetica", sans-serif
+	font-size: $base-font-size * $resolution-scalar
+	color: #666
+	height: 100%
+	overflow-x: hidden
+strong
+	font-weight: bolder
+h1 
+	font-size: 185%
+	font-weight: bold
+	color: #000
+	&.inline
+		display: inline
+	&.task
+		color: $task-color
+		padding-top: $gutter * $resolution-scalar
+		padding-bottom: $gutter * $resolution-scalar
+	&.event
+		color: $event-color
+		padding-bottom: $gutter * $resolution-scalar
+h2
+	font-size: 155%
+	padding-bottom: 0.5em
+	color: #000
+h3
+	font-weight: bolder
+	text-transform: uppercase
+	font-size: 100%
+	padding-bottom: 1em
+	color: #000
+	&.not-uppercase
+		text-transform: none
+a
+	color: #666
+	text-decoration: none
+p 
+	padding-bottom: $gutter-half * $resolution-scalar
+	line-height: 1.3em
+	a
+		color: $link-blue
+.content p:last-child
+	padding-bottom: 0
+#app-wrapper
+	+transition-property(left)
+	+transition-duration(0.2s)
+	+transition-timing-function(linear)
+	display: block
+	position: absolute
+	height: auto
+	min-height: 100%
+	width: 100%
+	top: 0px
+	left: 0px
+	&.menu-open
+		left: $menu-width * $resolution-scalar
+#app-content
+	display: block
+	position: relative
+	min-height: 100%
+	padding-top: $header-height * $resolution-scalar
+	z-index: 1
+.splash-screen #app-content
+	padding-top: 0
+header
+	display: block
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: $header-height * $resolution-scalar
+	background: $title-bar-blue
+	z-index: 10
+	.main-menu-button
+		display: block
+		position: absolute
+		top: ($header-height - image-height("icons/menu.png")) / 2 * $resolution-scalar
+		width: image-width("icons/menu.png") * $resolution-scalar
+		height: image-height("icons/menu.png") * $resolution-scalar
+		z-index: 2
+		&.main-menu-button-left
+			left: $gutter * $resolution-scalar
+			a
+				background-position: left center
+		&.main-menu-button-right
+			right: $gutter * $resolution-scalar
+			a
+				background-position: right center
+		a
+			display: block
+			position: relative
+			width: 100%
+			height: 100%
+			background-repeat: no-repeat
+			&.menu
+				background-image: url("../images/icons/menu.png")
+				background-size: (image-width("icons/menu.png")) * $resolution-scalar (image-height("icons/menu.png")) * $resolution-scalar
+			&.left-arrow
+				background-image: url("../images/icons/left-arrow-white.png")
+				background-size: (image-width("icons/left-arrow-white.png")) * $resolution-scalar (image-height("icons/left-arrow-white.png")) * $resolution-scalar
+			&.gear
+				background-image: url("../images/icons/gear-white.png")
+				background-size: (image-width("icons/gear-white.png")) * $resolution-scalar (image-height("icons/gear-white.png")) * $resolution-scalar
+	h1 
+		color: $section-header-blue
+		display: block
+		position: absolute
+		top: ($header-height / 2 - $base-font-size * .8) * $resolution-scalar
+		left: 0
+		width: 100%
+		text-align: center
+		z-index: 1
+nav.main-menu
+	display: block
+	position: absolute
+	top: 0
+	left: -$menu-width * $resolution-scalar
+	width: $menu-width * $resolution-scalar
+	height: 100%
+	padding-left: $gutter * $resolution-scalar
+	padding-right: $gutter * $resolution-scalar
+	background-color: $menu-blue
+	z-index: 9
+	a
+		display: block
+		position: relative
+		width: 100%
+		font-size: 185%
+		color: #fff
+		text-decoration: none
+		padding-top: $gutter-half * $resolution-scalar
+		padding-bottom: $gutter-half * $resolution-scalar
+		border-bottom: 1px dotted #fff
+	a:last-child
+		border-bottom: none
+section
+	+clearfix
+	display: block
+	position: relative
+	width: 100%
+	padding: $gutter * $resolution-scalar
+	padding-bottom: 0
+	> .content
+		display: block
+		position: relative
+		float: left
+		width: 100%
+		padding-left: $gutter-half * $resolution-scalar
+		padding-right: $gutter-half * $resolution-scalar
+		padding-top: $gutter * $resolution-scalar
+		padding-bottom: $gutter * $resolution-scalar
+	&.border-top .content
+		border-top: 1px dotted #e0e0e0
+	&.border-bottom .content
+		border-bottom: 1px dotted #e0e0e0
+.show
+	display: block
+	position: relative
+@mixin span-base
+	display: block
+	position: relative
+	float: left
+.span-33 
+	+span-base
+	width: 33.33333333%
+.span-66 
+	+span-base
+	width: 66.66666666%
+.span-25
+	+span-base
+	width: 25%
+.span-50
+	+span-base
+	width: 50%
+.span-75
+	+span-base
+	width: 75%
+.span-100
+	+span-base
+	width: 100%
+.padding-top-gutter-half 
+	padding-top: $gutter-half * $resolution-scalar
+.padding-right-gutter-half 
+	padding-right: $gutter-half * $resolution-scalar
+.padding-bottom-gutter-half 
+	padding-bottom: $gutter-half * $resolution-scalar
+.padding-left-gutter-half 
+	padding-left: $gutter-half * $resolution-scalar
+.padding-top-gutter 
+	padding-top: $gutter * $resolution-scalar
+.padding-right-gutter 
+	padding-right: $gutter * $resolution-scalar
+.padding-bottom-gutter 
+	padding-bottom: $gutter * $resolution-scalar
+.padding-left-gutter 
+	padding-left: $gutter * $resolution-scalar
+.padding-top-gutter-half 
+	padding-top: $gutter-half * $resolution-scalar
+.margin-right-gutter-half 
+	margin-right: $gutter-half * $resolution-scalar
+.margin-bottom-gutter-half 
+	margin-bottom: $gutter-half * $resolution-scalar
+.margin-left-gutter-half 
+	margin-left: $gutter-half * $resolution-scalar
+.margin-top-gutter 
+	margin-top: $gutter * $resolution-scalar
+.margin-right-gutter 
+	margin-right: $gutter * $resolution-scalar
+.margin-bottom-gutter 
+	margin-bottom: $gutter * $resolution-scalar
+.margin-left-gutter 
+	margin-left: $gutter * $resolution-scalar
+.tile-gray
+	display: block
+	position: absolute
+	width: image-width("icons/gray-phone.png") * $resolution-scalar
+	height: image-height("icons/gray-phone.png") * $resolution-scalar
+	top: 0
+	left: 0
+	background-repeat: no-repeat
+	background-size: (image-width("icons/gray-phone.png")) * $resolution-scalar (image-height("icons/gray-phone.png")) * $resolution-scalar
+	&.tile-gray-phone	
+		background-image: url("../images/icons/gray-phone.png")
+	&.tile-gray-email
+		background-image: url("../images/icons/gray-phone.png")
+.color-menu-blue
+	color: $menu-blue

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Survey Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../common/css/app.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="../common/js/zebra_datepicker.min.js"></script>
+<script src="../common/js/jquery.nouislider.min.js"></script>
+<script src="../common/js/main.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="app-wrapper">
+
+<nav id="main-menu" class="main-menu">
+<a href="#">Something</a>
+<a href="#">Something</a>
+<a href="#">Something</a>
+</nav><!--#main-menu-->
+
+<header>
+<div id="main-menu-button-left" class="main-menu-button main-menu-button-left"><a class="left-arrow">&nbsp;</a></div>
+<div id="main-menu-button-right" class="main-menu-button main-menu-button-right"><a class="gear">&nbsp;</a></div>
+<h1>Survey</h1>
+</header>
+
+<div id="app-content">
+
+<div class="detail-view-header">
+	<div class="content">
+			<h1>Consumer Satisfaction Survey</h1>
+	</div><!--.content-->
+</div><!--.detail-view-header-->
+
+<section>
+	<div class="content">
+		<form>
+			<div class="form-header-survey">Question 1<span class="color-menu-blue">/3</span></div>
+			<p>Morbi id urna in diam dignissim feugiat?</p>
+			<div class="form-control-group">
+				<div class="form-control form-control-radio form-control-radio-thumbs span-50">
+					<input type="radio" name="name" value="yes"><label class="thumbs thumbs-up">&nbsp;</label>
+				</div>
+				<div class="form-control form-control-radio form-control-radio-thumbs span-50">
+					<input type="radio" name="name" value="no"><label class="thumbs thumbs-down">&nbsp;</label>
+				</div>
+			</div><!--.form-control-group-->
+		</form>
+	</div><!--.content-->
+</section>
+
+<section>
+	<div class="content">
+		<form>
+			<div class="form-header-survey">Question 2<span class="color-menu-blue">/3</span></div>
+			<p>Nam mollis ultrices justo aenean eget mi?</p>
+			<div class="form-control-group">
+				<div class="form-control form-control-textarea">
+					<textarea name="text"></textarea>
+				</div>
+			</div><!--.form-control-group-->
+		</form>
+	</div><!--.content-->
+</section>
+
+<section>
+	<div class="content">
+		<form>
+			<div class="form-header-survey">Question 3<span class="color-menu-blue">/3</span></div>
+			<p>Nullam vitae sem at nunc pharetra ultricies?</p>
+			<div class="form-control-group">
+				<div class="form-control form-control-checkbox">
+					<input type="checkbox" ><label for="option-1">Option1</label>
+				</div>
+				<div class="form-control form-control-checkbox">
+					<input type="checkbox" ><label for="option-2">Option2</label>
+				</div>
+				<div class="form-control form-control-checkbox">
+					<input type="checkbox" ><label for="option-3">Option3</label>
+				</div>
+			</div><!--.form-control-group-->
+		</form>
+	</div><!--.content-->
+</section>
+
+<section>
+	<div class="content">
+		<form>
+			<div class="form-header-survey">Thank you</div>
+			<p>Thank you for taking the time to complete this survey.</p>
+		</form>
+	</div><!--.content-->
+</section>
+
+<section class="form-navigation-buttons">
+	<div class="content">
+		<a href="#" class="span-50 previous">previous</a>
+		<a href="#" class="span-50 next">next</a>
+		<!--a href="#" class="span-50 finish">finish</a-->
+	</div>
+</section><!--#form-bottom-buttons-->
+
+</div><!--#app-content-->
+</div><!--#app-wrapper-->
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+.list-view-header
+	display: block
+	position: relative
+	padding-left: $gutter * $resolution-scalar
+	padding-right: $gutter * $resolution-scalar
+	font-size: 100%
+	height: 2em
+	line-height: 2.3em
+	color: #000
+	width: 100%
+	margin-top: $gutter-half * $resolution-scalar
+	margin-bottom: $gutter-half * $resolution-scalar
+	background-color: $section-header-blue
+	&:first-child
+		margin-top: 0
+div.tabbed-list-view-nav
+	display: block
+	position: relative
+	height: $tabbed-list-view-nav-height * $resolution-scalar
+	width: 100%
+	margin-bottom: $gutter-half * $resolution-scalar
+	a
+		display: inline-block
+		position: relative
+		height: 100%
+		line-height: $tabbed-list-view-nav-height * $resolution-scalar
+		background: #000
+		color: #666
+		text-transform: uppercase
+		text-align: center
+		&.on  
+			color: #fff
+	.tabbed-list-view-nav-arrow
+		display: block
+		position: absolute
+		bottom: -$gutter-half * $resolution-scalar
+		left: 0
+		width: 0px
+		height: 0px
+		border-style: solid
+		border-width: ($gutter-half * $resolution-scalar) ($gutter-half * $resolution-scalar) 0 ($gutter-half * $resolution-scalar)
+		border-color: #000 transparent transparent transparent
+		margin-left: -$gutter-half * $resolution-scalar
+ul.tabbed-list-view 
+	+transition-property(left)
+	+transition-duration(0.2s)
+	+transition-timing-function(linear)
+	display: block
+	position: relative
+	top: $gutter * $resolution-scalar
+	left: 0
+	width: 100%
+	height: 100%
+	overflow: visible
+	z-index: 5
+	> li
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+	@for $i from 1 through 8
+		&.slide-#{$i}
+			left: -#{$i * 100%}
+ul.list-view
+	display: block
+	position: relative
+	width: 100%
+	padding-left: $gutter * $resolution-scalar
+	padding-right: $gutter * $resolution-scalar
+	li 
+		display: block
+		position: relative
+		width: 100%
+		height: 100%
+		padding: $gutter-half * $resolution-scalar
+		border-bottom: 1px dotted #ccc
+		&:last-child
+			border-bottom: none
+		.content 
+			display: block
+			position: relative
+			width: 100%
+			height: 100%
+			min-height: image-height("icons/right-arrow.png") * $resolution-scalar
+			text-decoration: none
+			z-index: 1
+		.thumbs
+			display: block
+			position: absolute
+			height: $left-thumb-size * $resolution-scalar
+			overflow: visible
+			z-index: 2
+			.thumb
+				+transition-property(left)
+				+transition-duration(0.2s)
+				+transition-timing-function(linear)
+				display: block
+				position: absolute
+				width: $left-thumb-size * $resolution-scalar
+				height: $left-thumb-size * $resolution-scalar
+				top: 0
+				left: 0
+		&.swiped
+			.content
+				visibility: hidden
+			.thumb-1
+				left: 0
+			.thumb-2
+				left: ($left-thumb-size * 1 + $gutter-half * 1) * $resolution-scalar
+			.thumb-3
+				left:  ($left-thumb-size * 2 + $gutter-half * 2) * $resolution-scalar
+	&.large-padding > li
+		padding-top: $gutter * $resolution-scalar
+		padding-bottom: $gutter * $resolution-scalar
+		&:last-child
+			padding-bottom: 0
+	&.left-thumbs > li > .content
+		min-height: $left-thumb-size * $resolution-scalar
+		padding-left: ($left-thumb-size + $gutter) * $resolution-scalar
+	&.right-one-icons > li > .content
+		padding-right: ($right-icon-padding + $gutter-half) * $resolution-scalar
+	&.right-two-icons > li > .content
+		padding-right: (($right-icon-padding * 2) + $gutter-half) * $resolution-scalar
+	&.right-three-icons > li > .content
+		padding-right: (($right-icon-padding * 3) + $gutter-half) * $resolution-scalar
+ul.collapsable > li > ul
+	display: none
+	padding-right: 0
+	padding-left: ($left-thumb-size + $gutter-half) * $resolution-scalar
+	> li
+		padding-right: 0 //collapsable lists we want to have right icons line up with parent
+ul.list-view-milestones 
+	background-image: url(../images/milestones-stripe.png)
+	background-repeat: repeat-y
+	background-position: top center
+	margin-top: $gutter * $resolution-scalar
+	li
+		min-height: $milestone-dot-size
+		border-bottom: none
+		.background-fill
+			display: block
+			position: absolute
+			width: 100%
+			background-color: #fff
+		&:first-child .background-fill
+			height: $milestone-dot-size / 2 * $resolution-scalar
+			top: -$gutter-half * $resolution-scalar
+		&:last-child .background-fill
+			height: 100%
+			top: $gutter-half * $resolution-scalar
+		&.complete 
+			.content
+				background-image: url(../images/icons/milestone-complete.png)
+				div
+					color: #ccc
+		&.current 
+			.content
+				background-image: url(../images/icons/milestone-current.png)
+		&.future 
+			.content
+				background-image: url(../images/icons/milestone-future.png)
+				div
+					color: #777
+		.content
+			min-height: $milestone-dot-size
+			background-position: top center
+			background-repeat: no-repeat
+			background-size: image-width("icons/milestone-current.png") * $resolution-scalar image-height("icons/milestone-current.png") * $resolution-scalar
+			div
+				position: relative
+				width: 33%
+				padding-top: $gutter-half * $resolution-scalar
+				line-height: 1.3em
+			.date
+				float: left
+				text-align: right
+			.objective
+				float: right
+				text-align: left
+
+ul.list-view-tasks li
+	.overdue-color-block
+		display: none
+		position: absolute
+		width: 6px * $resolution-scalar
+		height: 100%
+		background-color: #ff0000
+		top: 0
+		left: ($gutter * 2.5 - 3) * $resolution-scalar
+		z-index: 1
+	.strikethrough
+		display: none
+		position: absolute
+		width: 100%
+		height: 2px * $resolution-scalar
+		background-color: #ccc
+		top: $gutter-half * $resolution-scalar
+		left: 0
+		z-index: 1
+	.content		
+		padding-left: $gutter * 3 * $resolution-scalar
+		h2
+			width: 100%
+			padding-bottom: 0.2em
+			line-height: 0.7em
+		p
+
+			padding-bottom: 0.2em
+		p:last-child
+			padding-bottom: 0
+		.task-complete-checkbox
+			position: absolute
+			width: $gutter * 2 * $resolution-scalar
+			top: -6px * $resolution-scalar
+			left: $gutter-half * $resolution-scalar
+			z-index: 2
+		.date
+			display: block
+			position: relative
+			float: right
+			line-height: 1.2em
+		a
+			color: $link-blue
+	&.complete
+		color: #ccc
+		.strikethrough
+			display: block
+		.content
+			h2, a
+				color: #ccc
+				padding-bottom: 0
+
+	&.overdue
+		.overdue-color-block
+			display: block
+		.date
+			color: #ff0000
+	&.overdue.complete
+		.overdue-color-block
+			display: none
+		.date
+			color: #ccc
+.list-view-icons
+	display: block
+	position: absolute
+	height: 100%
+	top: 0
+	right: 0
+	> span
+		display: block
+		position: relative
+		float: left
+		height: 100%
+		background-position: right center
+		background-repeat: no-repeat
+		&.icon-right-arrow
+			width: image-width("icons/right-arrow.png")
+			background-image: url(../images/icons/right-arrow.png)
+			background-size: image-width("icons/right-arrow.png") * $resolution-scalar image-height("icons/right-arrow.png") * $resolution-scalar
+		&.icon-plus
+			width: image-width("icons/plus.png")
+			background-image: url(../images/icons/plus.png)
+			background-size: image-width("icons/plus.png") * $resolution-scalar image-height("icons/plus.png") * $resolution-scalar
+		&.icon-minus
+			width: image-width("icons/minus.png")
+			background-image: url(../images/icons/minus.png)
+			background-size: image-width("icons/minus.png") * $resolution-scalar image-height("icons/minus.png") * $resolution-scalar
+		&.icon-map-dot
+			display: none
+			width: image-width("icons/map-dot.png")
+			background-image: url(../images/icons/map-dot.png)
+			background-size: image-width("icons/map-dot.png") * $resolution-scalar image-height("icons/map-dot.png") * $resolution-scalar
+		
+.list-view-actions
+	display: block
+	position: relative
+	top: -5px * $resolution-scalar
+	float: right
+	width: image-width("icons/small-tile-phone.png") * $resolution-scalar
+	height: 100%
+	> span
+		display: block
+		position: relative
+		float: left
+		width: image-width("icons/small-tile-phone.png") * $resolution-scalar
+		height: image-height("icons/small-tile-phone.png") * $resolution-scalar
+		background-position: top left
+		background-repeat: no-repeat
+		background-size: image-width("icons/small-tile-phone.png") * $resolution-scalar image-height("icons/small-tile-phone.png") * $resolution-scalar
+		margin-bottom: 10px * $resolution-scalar
+	&.action-phone
+		background-image: url(../images/icons/small-tile-phone.png)
+	&.action-email
+		background-image: url(../images/icons/small-tile-email.png)

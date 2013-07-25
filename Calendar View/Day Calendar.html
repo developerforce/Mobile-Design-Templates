@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Day Calendar Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../common/css/app.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="../common/js/main.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="app-wrapper">
+
+<nav id="main-menu" class="main-menu">
+<a href="#">Something</a>
+<a href="#">Something</a>
+<a href="#">Something</a>
+</nav><!--#main-menu-->
+
+<header>
+<div id="main-menu-button-left" class="main-menu-button main-menu-button-left"><a class="left-arrow">&nbsp;</a></div>
+<div id="main-menu-button-right" class="main-menu-button main-menu-button-right"><a class="gear">&nbsp;</a></div>
+<h1>Calendar</h1>
+</header>
+
+<div id="app-content">
+
+<section>
+    <div class="content">
+        <div class="span-50 padding-right-gutter-half">
+            <h1 class="padding-bottom-gutter">My Week</h1>
+            <ul class="week-planner">
+                <li data-date="06-20">
+                    <div class="date">06/20</div>
+                    <ul class="week-planner-items">
+                        <li class="event"></li>
+                        <li class="event"></li>
+                        <li class="task"></li>
+                        <li class="task"></li>
+                    </ul>
+                </li>
+                <li data-date="06-21">
+                    <div class="date">06/21</div>
+                    <ul class="week-planner-items">
+                        <li class="event"></li>
+                        <li class="task"></li>
+                    </ul>
+                </li>
+            </ul><!-- .week-planner -->
+            
+        </div><!-- .span-50 -->
+        <div class="span-50 padding-left-gutter-half">
+            <div class="date-content" id="date-content-06-20">
+                <h1 class="event">Events</h1>
+                <div class="events">
+                    <h3>Weekly Sales meeting</h3>
+                    <p>
+                        10:00AM - 11:00AM<br/>
+                        <a href="#">John Doe</a><br/>
+                        <a href="#">Opportunity #1232213</a>
+                    </p>
+                    <h3>Weekly Sales meeting</h3>
+                    <p>
+                        10:00AM - 11:00AM<br/>
+                        <a href="#">John Doe</a><br/>
+                        <a href="#">Opportunity #1232213</a>
+                    </p>
+                </div><!-- .events -->
+                <h1 class="task">Tasks</h1>
+                <div class="tasks">
+                    <h3>Weekly Sales meeting</h3>
+                    <p>
+                        <a href="#">John Doe</a><br/>
+                        <a href="#">Opportunity #1232213</a>
+                    </p>
+                    <h3>Weekly Sales meeting</h3>
+                    <p>
+                        <a href="#">John Doe</a><br/>
+                        <a href="#">Opportunity #1232213</a>
+                    </p>
+                </div><!-- .tasks -->
+            </div><!-- .date-content -->
+
+            <div class="date-content" id="date-content-06-21">
+                <h1 class="event">Events</h1>
+                <div class="events">
+                    <h3>Weekly Sales meeting</h3>
+                    <p>
+                        10:00AM - 11:00AM<br/>
+                        <a href="#">John Doe</a><br/>
+                        <a href="#">Opportunity #1232213</a>
+                    </p>
+                </div><!-- .events -->
+                <h1 class="task">Tasks</h1>
+                <div class="tasks">
+                    <h3>Weekly Sales meeting</h3>
+                    <p>
+                        <a href="#">John Doe</a><br/>
+                        <a href="#">Opportunity #1232213</a>
+                    </p>
+                </div><!-- .tasks -->
+            </div><!-- .date-content -->
+            
+        </div><!--.span-50-->
+    </div><!-- .content -->
+</section>
+
+</div><!--#app-content-->
+</div><!--#app-wrapper-->
+
+</body>
+</html>

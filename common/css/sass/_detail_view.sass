@@ -1,0 +1,115 @@
+.detail-view-header
+	display: block
+	position: relative
+	width: 100%
+	background-color: $section-header-blue
+	color: #000
+	.content
+		display: block
+		position: relative
+		width: 100%
+		padding: $gutter-one-and-half * $resolution-scalar
+		padding-left: $gutter-one-and-half * $resolution-scalar
+		padding-right: $gutter-one-and-half * $resolution-scalar
+		.status
+			margin-top: 0.5em
+			.status-dot
+				+border-radius(20px * $resolution-scalar)
+				display: inline-block
+				position: relative
+				width: 20px * $resolution-scalar
+				height: 20px * $resolution-scalar
+				margin-right: 10px * $resolution-scalar
+			&.status-red
+				color: red
+				.status-dot
+					background: red
+			&.status-yellow
+				color: yellow
+				.status-dot
+					background: yellow
+			&.status-green
+				color: green
+				.status-dot
+					background: green
+		.thumb
+			display: block
+			position: absolute
+			width: $left-thumb-size * $resolution-scalar
+			height: $left-thumb-size * $resolution-scalar
+			top: $gutter-one-and-half * $resolution-scalar
+			left: $gutter-one-and-half * $resolution-scalar
+	&.with-action-panel .content
+		padding-right: ($gutter-one-and-half + image-width("icons/tile-camera.png")) * $resolution-scalar
+	&.left-thumb .content
+		min-height: ($left-thumb-size + 2 * $gutter-one-and-half) * $resolution-scalar
+		padding-left: (2 * $gutter + $left-thumb-size) * $resolution-scalar
+	&.detail-view-header-about
+		text-align: center
+		.description
+			text-align: left
+			padding-top: $gutter-one-and-half * $resolution-scalar
+			line-height: 1.3em
+	.detail-view-action-panel
+		+clearfix
+		display: block
+		position: absolute
+		right: 0
+		top: 0
+		width: (image-width("icons/tile-camera.png") + 4) * $resolution-scalar
+		background-color: #fff
+		padding: 2px * $resolution-scalar
+		padding-bottom: 0
+		z-index: 5
+		> a
+			display: block
+			position: relative
+			margin-bottom: 2px * $resolution-scalar
+			width: image-width("icons/tile-camera.png") * $resolution-scalar
+			height: image-height("icons/tile-camera.png") * $resolution-scalar
+			background-size: image-width("icons/tile-camera.png") * $resolution-scalar image-height("icons/tile-camera.png") * $resolution-scalar
+			background-repeat: no-repeat
+			&.action-note
+				background-image: url(../images/icons/tile-note.png)
+			&.action-map
+				background-image: url(../images/icons/tile-map.png)
+			&.action-phone
+				background-image: url(../images/icons/tile-phone.png)
+			&.action-followup
+				background-image: url(../images/icons/tile-followup.png)
+			&.action-history
+				background-image: url(../images/icons/tile-history.png)
+			&.action-closewin
+				background-image: url(../images/icons/tile-closewin.png)
+			&.action-closeloss
+				background-image: url(../images/icons/tile-closeloss.png)
+.detail-view-table
+	.detail-view-table-row
+		display: block
+		position: relative
+		width: 100%
+		padding-bottom: $gutter-half * $resolution-scalar
+		.detail-view-table-left-column
+			display: block
+			position: absolute
+			top: 8px * $resolution-scalar
+			left: 0
+			width: ($left-thumb-size + $gutter) * $resolution-scalar
+		&.left-column-tile-gray .detail-view-table-left-column
+			width: (image-width("icons/gray-phone.png") + $gutter) * $resolution-scalar
+		.detail-view-table-right-column
+			display: block
+			position: relative
+			padding-left: ($left-thumb-size + $gutter) * $resolution-scalar
+		&.left-column-tile-gray .detail-view-table-right-column
+			padding-left: (image-width("icons/gray-phone.png") + $gutter) * $resolution-scalar
+		&:last-child
+			padding-bottom: 0
+section.opportunity-overview
+	height: 150px
+	padding-top: 1em
+	padding-bottom: 1em
+	h1
+		font-size: 385%
+		line-height: 1.6em
+

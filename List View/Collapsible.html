@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Collapsible List View Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../common/css/app.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="../common/js/main.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="app-wrapper">
+
+<nav id="main-menu" class="main-menu">
+<a href="#">Something</a>
+<a href="#">Something</a>
+<a href="#">Something</a>
+</nav><!--#main-menu-->
+
+<header>
+<div id="main-menu-button-left" class="main-menu-button main-menu-button-left"><a class="menu">&nbsp;</a></div>
+<div id="main-menu-button-right" class="main-menu-button main-menu-button-right"><a class="gear">&nbsp;</a></div>
+<h1>Contacts</h1>
+</header>
+
+<div id="app-content">
+
+<ul class="list-view collapsable left-thumbs right-one-icons">
+    <li>
+        <div class="thumbs">
+            <img class="thumb" src="../common/images/placeholders/account-0.png">
+        </div><!-- .thumbs -->
+        <div class="content">
+            <h1>Acme Inc</h1>
+            <div class="list-view-icons">
+                <span class="icon-plus">&nbsp;</span>
+            </div>
+        </div><!--.content-->
+        <ul class="list-view right-one-icons">
+            <li>
+                <div class="content">
+                    <h2>John Broker</h2>
+                    Retail Sales
+                    <div class="list-view-icons">
+                        <span class="icon-right-arrow">&nbsp;</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="content">
+                    <h2>Allison Amin</h2>
+                    Executive Assistant
+                    <div class="list-view-icons">
+                        <span class="icon-right-arrow">&nbsp;</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <div class="thumbs">
+            <img class="thumb" src="../common/images/placeholders/account-1.png">
+        </div><!-- .thumbs -->
+        <div class="content">
+            <h1>Dunder Mifflin</h1>
+            <div class="list-view-icons">
+                <span class="icon-plus">&nbsp;</span>
+            </div>
+        </div><!--.content-->
+        <ul class="list-view right-one-icons">
+            <li>
+                <div class="content">
+                    <h2>Regina Rodriguez</h2>
+                    Operations Assistant
+                    <div class="list-view-icons">
+                        <span class="icon-right-arrow">&nbsp;</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="content">
+                    <h2>Jason Miller</h2>
+                    Regional Manager
+                    <div class="list-view-icons">
+                        <span class="icon-right-arrow">&nbsp;</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+</div><!--#app-content-->
+</div><!--#app-wrapper-->
+
+</body>
+</html>

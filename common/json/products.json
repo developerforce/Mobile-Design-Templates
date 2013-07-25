@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Product and more 1",
+        "inventory": 34, 
+        "total_sold": 400
+    },
+    {
+        "name": "Product 2",
+        "inventory": 14, 
+        "total_sold": 311
+    },
+    {
+        "name": "Product 3",
+        "inventory": 27, 
+        "total_sold": 213
+    },
+    {
+        "name": "Product 4",
+        "inventory": 17, 
+        "total_sold": 404
+    },
+    {
+        "name": "Produbct 3",
+        "inventory": 27, 
+        "total_sold": 213
+    },
+    {
+        "name": "Producbt 4",
+        "inventory": 17, 
+        "total_sold": 404
+    },
+    {
+        "name": "Prodcudct 3",
+        "inventory": 27, 
+        "total_sold": 213
+    },
+    {
+        "name": "Prodduct 4",
+        "inventory": 17, 
+        "total_sold": 404
+    }
+]

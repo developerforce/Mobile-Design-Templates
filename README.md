@@ -1,4 +1,3 @@
-Mobile-Design-Templates
-=======================
-
-Repo for hosting the Mobile Design Templates
+Mobile Design Templates
+===========
+Mobile Design Templates provide developers with beautiful looking, mobile-optimized HTML5 and CSS3 markup for the most common enterprise micro moments: edit and view customer data, view backend reports, find nearby records, and much more. Optimized for today’s modern smart phones, Developers can use these modular and customizable templates to connect to customer data using the Salesforce Platform Mobile Services, and Developer Mobile Packs. The templates are completely open source and are designed to let you focus on building engaging mobile apps for your customers, employees, and partners.

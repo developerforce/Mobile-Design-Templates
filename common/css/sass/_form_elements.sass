@@ -1,0 +1,230 @@
+form
+	h3
+		color: #666
+label
+	display: inline-block
+	position: relative
+	padding-left: $gutter-half
+	&.thumbs
+		width: image-width("../images/icons/thumbs-up.png") * $resolution-scalar
+		height: image-height("../images/icons/thumbs-up.png") * $resolution-scalar
+		top: -24px * $resolution-scalar
+		margin-left: $gutter-half
+		background-repeat: no-repeat
+		background-size: image-width("../images/icons/thumbs-up.png") * $resolution-scalar image-height("../images/icons/thumbs-up.png") * $resolution-scalar
+	&.thumbs-up
+		background-image: url(../images/icons/thumbs-up.png)
+	&.thumbs-down
+		background-image: url(../images/icons/thumbs-down.png)
+.form-control-checkbox label
+	top: -8px * $resolution-scalar
+input, select
+	width: 100%
+	height: ($gutter * 2.5) * $resolution-scalar
+	padding: $gutter-half * $resolution-scalar
+	font-size: 100%
+input[type=text], select
+	border: 1px solid #ccc
+input[type=checkbox], input[type=radio]
+	width: $gutter-one-and-half * $resolution-scalar
+	height: $gutter-one-and-half * $resolution-scalar
+	margin: 0
+	padding: 0
+textarea
+	width: 100%
+	height: $base-font-size * 6 * $resolution-scalar
+	border: 1px solid #ccc
+.form-control-toggle 
+	+border-radius(8px * $resolution-scalar)
+	+box-sizing("content-box")
+	display: block
+	position: relative
+	float: left
+	height: ($gutter * 2.5) * $resolution-scalar
+	width: $toggle-width * $resolution-scalar
+	background: #ccc
+	border: 2px solid #ddd
+	input[type=checkbox]
+		display: none
+	span.label
+		display: block
+		position: absolute
+		top: 0
+		text-transform: uppercase
+		font-weight: bolder
+		color: #fff
+		width: $toggle-width / 2 * $resolution-scalar
+		line-height: ($gutter * 2.5) * $resolution-scalar
+		z-index: 1
+		&.on
+			left: $gutter-half * $resolution-scalar
+		&.off
+			right: $gutter-half * $resolution-scalar
+			text-align: right
+	.handle
+		+transition-property(all)
+		+transition-duration(0.2s)
+		+transition-timing-function(linear)
+		+background-image(linear-gradient(left, #cccccc, #ddd))
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: ($toggle-width / 2) * $resolution-scalar
+		height: 100%
+		z-index: 2
+	&.checked
+		background: #60A725
+		.handle
+			left: ($toggle-width / 2) * $resolution-scalar
+.form-header-survey
+	display: block
+	position: relative
+	width: 100%
+	text-align: right
+	color: $section-header-blue
+	font-size: 90%
+	line-height: 1.5em
+	text-transform: uppercase
+	background-color: $title-bar-blue
+	border-bottom: 2px solid $menu-blue
+	padding-top: .3em
+	padding-right: $gutter-half * $resolution-scalar
+	letter-spacing: 2px
+	margin-bottom: $gutter * $resolution-scalar
+.form-control-group
+	display: block
+	position: relative
+	margin-bottom: $gutter * $resolution-scalar
+	text-align: left
+	&:last-child
+		padding-bottom: none
+	.form-control
+		display: block
+		position: relative
+		margin-bottom: $gutter-half * $resolution-scalar
+	.form-control-range 
+		width: 90%
+		margin-left: 5%
+		ul 
+			display: block
+			position: absolute
+			top: 42px * $resolution-scalar
+			z-index: 1
+			li
+				display: block
+				position: absolute
+				width: 2px * $resolution-scalar
+				height: 18px * $resolution-scalar
+				background-color: #ccc
+				overflow: visible
+				z-index: 1
+				span
+					display: block
+					position: absolute
+					font-size: 90%
+.settings .form-control-group
+	float: right
+.form-navigation-buttons
+	a
+		display: block
+		position: relative
+		float: left
+		height: 100%
+		line-height: ((image-height("icons/form-button-previous.png") + $gutter) / 2) * $resolution-scalar
+		padding-top: $gutter-half * $resolution-scalar
+		padding-bottom: $gutter-half * $resolution-scalar
+		padding-left: ($gutter + image-width("icons/form-button-previous.png")) * $resolution-scalar
+		text-align: left
+		text-transform: uppercase
+		color: $menu-blue
+		background-image: url(../images/icons/form-button-previous.png)
+		background-position: left center
+		background-repeat: no-repeat
+		background-size: image-width("icons/form-button-previous.png") * $resolution-scalar image-height("icons/form-button-previous.png") * $resolution-scalar
+		&.next, &.finish
+			border-left: 1px dotted #e0e0e0
+			text-align: right
+			padding-right: ($gutter + image-height("icons/form-button-previous.png")) * $resolution-scalar
+			padding-left: 0
+			background-position: right center
+			&.span-100
+				border-left: none
+		&.next
+			background-image: url(../images/icons/form-button-next.png)
+		&.finish
+			background-image: url(../images/icons/form-button-finish.png)
+.progress-dotted
+	display: block
+	position: relative
+	width: 100%
+	height: ($progress-dotted-size + $gutter-half + $base-font-size) * $resolution-scalar
+	margin-bottom: $gutter * $resolution-scalar
+	.progress-dotted-bg
+		display: block
+		position: absolute
+		top:  ($progress-dotted-size / 2 - 1) * $resolution-scalar
+		left: 0
+		width: 100%
+		height: 2px * $resolution-scalar
+		background-color: #dddddd
+		z-index: 1
+	.progress-dotted-label
+		display: block
+		position: absolute
+		top: ($progress-dotted-size + $gutter-half) * $resolution-scalar
+	ul
+		display: block
+		position: relative
+		height: $progress-dotted-size * $resolution-scalar
+		width: 100%
+		z-index: 2
+		li
+			+border-radius(($progress-dotted-size / 2) * $resolution-scalar)
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			height: $progress-dotted-size * $resolution-scalar
+			width: $progress-dotted-size * $resolution-scalar
+			overflow: visible
+			background-color: #dddddd
+			&.on
+				background-color: #000
+.progress-bar
+	display: block
+	position: relative
+	width: 100%
+	height: 20px * $resolution-scalar
+	background: #ccc
+	margin-bottom: $gutter * $resolution-scalar
+.progress-bar-fill
+	display: block
+	position: absolute
+	top: 0
+	left: 0
+	height: 20px * $resolution-scalar
+	background-color: #000
+.data-capture-buttons
+	a
+		+border-radius(8px * $resolution-scalar)
+		+background-image(linear-gradient(top, $menu-blue, $link-blue))
+		display: block
+		position: relative
+		float: left
+		height: 100%
+		line-height: $gutter-one-and-half
+		text-align: center
+		color: #fff
+		text-transform: uppercase
+		font-size: 90%
+		font-weight: bolder
+	&.one-buttons a
+		width: 100%
+	&.two-buttons a
+		width: 48%
+		&:first-child
+			margin-right: 1%
+		&:last-child
+			float: right
+			margin-left: 1%
