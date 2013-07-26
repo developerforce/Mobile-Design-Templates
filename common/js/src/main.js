@@ -49,6 +49,7 @@ function ReportObj() {
 		margin: {top: 50, right: 20, bottom: 100, left: 60},
 		valueline: null,
 		periods : [10, 30],
+		selectedPeriod : 0,
 		maxVal: {date: null, total: 0},
 		minVal: {date: null, total: 99999999999}
 	};
@@ -677,16 +678,16 @@ ReportObj.prototype.getGraphData = function() {
 		});
 	}
 
-	console.log(t.data);
-
 	if (t.graphType == "line") {
-		var cutoffDate = new Date();
-
-		cutoffDate.setDate(cutoffDate.getDate() - t.line.periods[0] - 2);
+		var today = new Date(),
+			cutoffDate = new Date();
 		
+		cutoffDate.setDate(cutoffDate.getDate() - t.line.periods[t.line.selectedPeriod] - 2);
 		t.json.forEach(function(d){
 			var thisDate = new Date(d.date);
-			if (thisDate.getTime() >= cutoffDate.getTime()) {
+			// console.log(thisDate.getMonth() + ":" + thisDate.getDate() + ":" + d[t.axis.yAxisIndex] + " " + cutoffDate.getTime());
+			if (thisDate.getTime() >= cutoffDate.getTime() && thisDate.getTime() <= today.getTime()) {
+				console.log(thisDate.getTime());
 				t.data.push({date: d[t.axis.xAxisIndex], total: +d[t.axis.yAxisIndex]});
 				if (+d[t.axis.yAxisIndex] > t.line.maxVal.total) {
 					t.line.maxVal = {date: d[t.axis.xAxisIndex], total: +d[t.axis.yAxisIndex]};
@@ -1012,30 +1013,13 @@ ReportObj.prototype.renderLineGraph = function() {
 	t.addLineGraphSelect();
 }
 ReportObj.prototype.updateLineGraph = function(value) {
-	var t = this,
-		data = [],
-		cutoffDate = new Date(),
-		maxVal = {date: null, total: 0},
-		minVal = {date: null, total: 99999999999};
+	var t = this;
 
-	cutoffDate.setDate(cutoffDate.getDate() - t.line.periods[value] - 2);
+	t.line.selectedPeriod = value;
+	t.getGraphData();
 
-	t.json.forEach(function(d){
-		var thisDate = new Date(d.date);
-		if (thisDate.getTime() >= cutoffDate.getTime()) {
-			data.push({date: d["date"], total: +d["total"]});
-			if (+d["total"] > maxVal.total) {
-				maxVal = {date: d["date"], total: +d["total"]};
-			}
-			if (+d["total"] < minVal.total) {
-				minVal = {date: d["date"], total: +d["total"]};
-			}
-		}
-	});
-
-
-	t.axis.x.domain([new Date(data[0].date), new Date(data[data.length - 1].date)])
-	t.axis.y.domain([0, d3.max(data, function(d) { return d.total; })]);
+	t.axis.x.domain([new Date(t.data[0].date), new Date(t.data[t.data.length - 1].date)])
+	t.axis.y.domain([0, d3.max(t.data, function(d) { return d.total; })]);
 
 	t.axis.xAxis
 		.scale(t.axis.x)
@@ -1057,17 +1041,17 @@ ReportObj.prototype.updateLineGraph = function(value) {
 	transition.select(".y.axis").call(t.axis.yAxis);
 
 	t.svg.selectAll(".graph-line")
-		.data(data)
+		.data(t.data)
 		.transition().duration(750)
-        .attr("d", t.line.valueline(data));
+        .attr("d", t.line.valueline(t.data));
     t.svg.selectAll(".max-text")
-					.data([maxVal])
+					.data([t.line.maxVal])
 					.text(function(d, i) {
 						var format = d3.time.format("%b %d");
 						return d.total + " on " + format(new Date(d.date));
 					});
 	t.svg.selectAll(".min-text")
-					.data([minVal])
+					.data([t.line.minVal])
 					.text(function(d, i) {
 						var format = d3.time.format("%b %d");
 						return d.total + " on " + format(new Date(d.date));
