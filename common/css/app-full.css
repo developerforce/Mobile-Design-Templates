@@ -1516,20 +1516,21 @@ textarea {
   bottom: 0;
   width: 100%;
   height: 50%;
+  border-top: 2px solid #cccccc;
 }
 
-/* line 14, sass/_map.sass */
+/* line 15, sass/_map.sass */
 .infowindow-container {
   display: block;
   position: relative;
   width: 350px;
 }
-/* line 18, sass/_map.sass */
+/* line 19, sass/_map.sass */
 .infowindow-container p {
   font-size: 90%;
   padding-bottom: 0;
 }
-/* line 21, sass/_map.sass */
+/* line 22, sass/_map.sass */
 .infowindow-container p strong {
   font-size: 80%;
   line-height: 3em;
