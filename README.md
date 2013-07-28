@@ -11,3 +11,7 @@ Key Features
 * Cross-platform (iOS, Android etc.) support courtesy of the use of standard web technologies like HTML5, CSS3 and JavaScript.
 * Optimized for the phone form factor.
 * Use-case agnostic. The base HTML5/CSS3 can be modified to work with any Salesforce object (Standard or Custom) in the context of any mobile use case.
+
+Gallery
+============
+Check out the Mobile [Design Templates Gallery](https://github.com/developerforce/Mobile-Design-Templates/wiki/Gallery) for a quick look at all the templates included in this repo.
