@@ -148,7 +148,7 @@ p a {
 }
 
 /* line 46, sass/_global.sass */
-#app-wrapper {
+.app-wrapper {
   -webkit-transition-property: left;
   -moz-transition-property: left;
   -o-transition-property: left;
@@ -170,12 +170,12 @@ p a {
   left: 0px;
 }
 /* line 57, sass/_global.sass */
-#app-wrapper.menu-open {
+.app-wrapper.menu-open {
   left: 250px;
 }
 
 /* line 59, sass/_global.sass */
-#app-content {
+.app-content {
   display: block;
   position: relative;
   min-height: 100%;
@@ -184,7 +184,7 @@ p a {
 }
 
 /* line 65, sass/_global.sass */
-.splash-screen #app-content {
+.splash-screen .app-content {
   padding-top: 0;
 }
 
@@ -2148,14 +2148,14 @@ button.Zebra_DatePicker_Icon_Inside {
   background-image: radial-gradient(100px 100px, #597f86 10px, #7ba8b0 300px);
 }
 /* line 3, sass/_misc.sass */
-.splash #app-content {
+.splash .app-content {
   position: absolute;
   width: 100%;
   height: 100%;
   padding-top: 0;
 }
 /* line 8, sass/_misc.sass */
-.splash #app-content .splash-screen-wrapper {
+.splash .app-content .splash-screen-wrapper {
   display: block;
   position: absolute;
   top: 0;
@@ -2167,7 +2167,7 @@ button.Zebra_DatePicker_Icon_Inside {
   margin: auto;
 }
 /* line 18, sass/_misc.sass */
-.splash #app-content .splash-screen-wrapper .content {
+.splash .app-content .splash-screen-wrapper .content {
   display: block;
   position: relative;
   width: 100%;

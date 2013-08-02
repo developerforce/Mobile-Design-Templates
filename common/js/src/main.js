@@ -88,11 +88,11 @@ ModalObj Prototype
 ModalObj.prototype.init = function() {
 	$(".open-modal").click(function(e) {
 		e.preventDefault();
-		$("#modal").fadeIn();
+		$(".modal").fadeIn();
 	});
 	$(".close-modal").click(function(e) {
 		e.preventDefault();
-		$("#modal").fadeOut();
+		$(".modal").fadeOut();
 	});
 }
 /*####################################################################################################################
@@ -103,9 +103,9 @@ MainMenuObj.prototype.init = function() {
 	t.setupMenuSlider();
 }
 MainMenuObj.prototype.setupMenuSlider = function() {
-	$('#main-menu-button-left a.menu').click(function(e) {
+	$('.main-menu-button-left a.menu').click(function(e) {
 		e.preventDefault();
-		$("#app-wrapper").toggleClass("menu-open");
+		$(".app-wrapper").toggleClass("menu-open");
 	});
 }
 /*####################################################################################################################
@@ -139,11 +139,11 @@ ListViewObj.prototype.setupCollapsableMenus = function() {
 }
 ListViewObj.prototype.setupTabbedLists = function() {
 	var t = this,
-		container = $('ul#tabbed-list-view');
+		container = $('ul.tabbed-list-view');
 		panels = container.children("li"),
-		tabs = $('#tabbed-list-view-nav a'),
+		tabs = $('.tabbed-list-view-nav a'),
 		tabWidth = tabs.first().width(),
-		arrow = $("#tabbed-list-view-nav-arrow"),
+		arrow = $(".tabbed-list-view-nav-arrow"),
 		ww = panels.first().width();
 
 	arrow.css({
@@ -508,7 +508,7 @@ MapObj.prototype.setupMapView = function() {
 }
 MapObj.prototype.updateWrapperDimensions = function() {
 	t = this,
-		appContentEl = $("#app-content"),
+		appContentEl = $(".app-content"),
 		mapCanvasWrapperEl = $('#map-canvas-wrapper'),
 		wh = $(window).height(),
 		contentBottomPosition = appContentEl.height();
