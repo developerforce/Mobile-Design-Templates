@@ -75,13 +75,22 @@ var modalObj = new ModalObj();
 	calendarObj = new CalendarObj();
 
 $(document).ready(function() {
+	init();
+});
+
+$(document).on('onTemplateReady', function() {
+	init();
+});
+
+function init(){
 	modalObj.init();
 	mainMenuObj.init();
 	listViewObj.init();
 	formObj.init();
 	taskListObj.init();
 	calendarObj.init();
-});
+
+}
 /*####################################################################################################################
 ModalObj Prototype
 ####################################################################################################################*/
