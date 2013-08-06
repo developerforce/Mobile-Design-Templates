@@ -1,0 +1,164 @@
+<apex:page docType="html-5.0"
+	       showHeader="false" 
+		   sidebar="false"
+		   standardStylesheets="false"
+		   standardController="Contact"		   
+		   extensions="Contacts_Ext">
+<head>
+	<title>Picture List View Template</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, maximum-scale=1, user-scalable=no"/>   
+    <apex:stylesheet value="{!URLFOR($Resource.Mobile_Design_Templates, 'Mobile-Design-Templates-master/common/css/app.min.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.Mobile_Design_Templates, 'Mobile-Design-Templates-master/common/js/jQuery2.0.2.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.Mobile_Design_Templates, 'Mobile-Design-Templates-master/common/js/jquery.touchwipe.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.Mobile_Design_Templates, 'Mobile-Design-Templates-master/common/js/main.min.js')}"/>
+    <apex:includeScript value="{!$Resource.underscore_1_5_1}"/> 
+    <apex:includeScript value="{!$Resource.path_js}"/> 
+
+    
+    <script type="text/html" id='listView'>
+        <div class="app-wrapper">
+        
+            <nav class="main-menu">
+                <a href="#">Accounts</a>
+                <a href="#">Opportunities</a>
+            </nav>
+            
+            <header>
+                <div class="main-menu-button main-menu-button-left"><a class="menu">&nbsp;</a></div>
+                <h1>Contacts</h1>
+            </header>
+            
+            <div class="app-content">
+                <ul id="cList" class="list-view with-swipe left-thumbs right-one-icons">
+                    <% for(var i = 0; i < contacts.length; i++){ %>
+                        <li>
+                            <div class="thumbs">
+                                <% if (typeof(contacts[i].Phone) != "undefined") { %>
+                                    <a href="tel:<%= contacts[i].Phone %>" class="thumb thumb-1">
+                                        <img class="thumb" src="{!URLFOR($Resource.Mobile_Design_Templates, 'Mobile-Design-Templates-master/common/images/icons/tile-phone.png')}" />
+                                    </a>    
+                                <% } %>                
+                                
+                                <% if (typeof(contacts[i].Email) != "undefined") {%>
+                                    <a href="mailto:<%= contacts[i].Email %>" class="thumb thumb-2">
+                                        <img class="thumb" src="{!URLFOR($Resource.Mobile_Design_Templates, 'Mobile-Design-Templates-master/common/images/icons/tile-email.png')}" />
+                                    </a>
+                                <% } %>                
+                                <img class="thumb thumb-3" src="<%= contacts[i].Pic %>"/>
+                            </div>
+                                    <a href="#/contact/<%= contacts[i].Id %>" class="content">
+                                <h2><%= contacts[i].Name %></h2>
+                                <%= contacts[i].Title %>
+                                <div class="list-view-icons">
+                                    <span class="icon-right-arrow">&nbsp;</span>
+                                </div>
+                            </a>
+                        </li>
+                    <% } %>                
+                </ul>        
+            </div>
+        </div>
+    </script>
+    
+    <script type="text/html" id='detailView'>
+            <div class="app-wrapper">
+            
+                <nav class="main-menu">
+                    <a href="#">Accounts</a>
+                    <a href="#">Opportunities</a>
+                </nav>
+                
+                <header>
+                        <div class="main-menu-button main-menu-button-left"><a class="left-arrow" href="#/contacts">&nbsp;</a></div>
+                    <h1>Contact</h1>
+                </header>
+                
+                <div class="app-content">
+                
+                    <div class="detail-view-header left-thumb">
+                        <div class="content">
+                            <img class="thumb" src="<%= contact.Pic %>"/>
+                            <h1><%= contact.Name %></h1>
+                            <h3><%= contact.Account.Name %></h3>
+                        </div>
+                    </div>
+                    
+                    <section class="border-bottom">
+                        <div class="content">
+                            <h3>Address</h3>
+                            <p>
+                            	<%= contact.MailingStreet %><br/>
+                            	<%= contact.MailingCity %>, <%= contact.MailingState %> <%= contact.MailingPostalCode %><br/>
+                                <%= contact.MailingCountry %>    
+                            </p>
+                        </div>
+                        <div class="content">
+                            <h3>Title</h3>
+                            <p>
+                            	<%= contact.Title %> 
+                            </p>
+                        </div>    
+                    </section>                    
+                </div>
+            </div>
+    </script>
+    
+    <script type="text/javascript">
+			var contactRecs = new Array();
+            var compiledListViewTempl = _.template($("#listView").html());
+    		var compiledDetailViewTempl = _.template($("#detailView").html());
+                
+    		$(document).ready(function() {
+                getAllContacts();
+			});
+            
+            function getAllContacts(){
+                Visualforce.remoting.Manager.invokeAction(
+                		'{!$RemoteAction.Contacts_Ext.getContactRecs}',
+            			function(records, e) { 
+                    		showContacts(records);}, 
+                		{escape:false}); 
+            }
+    
+    		function showContacts(records) {               
+                contactRecs.length = 0;                                
+                for(var i = 0; i < records.length; i++) { 
+                    records[i].Pic = '{!URLFOR($Resource.BlankAvatar)}';
+                    if (typeof records[i].Contact_Pic__c != "undefined"){
+                        records[i].Pic = $(records[i].Contact_Pic__c).attr('src');
+                    }
+                    contactRecs[records[i].Id] = records[i]; 
+                }
+
+                $('#mainContainer').empty();
+                $('#mainContainer').append(compiledListViewTempl({contacts : records}));
+                $(document).trigger('onTemplateReady');               
+            }
+
+			function showContactDetails(recordId) {
+                var contact = contactRecs[recordId];
+                
+                $('#mainContainer').empty();
+                $('#mainContainer').append(compiledDetailViewTempl({contact: contact}));
+            }
+                
+    		Path.map("#/contacts").to(function(){
+		    	getAllContacts();
+			});
+    
+    		Path.map("#/contact/:contactId").to(function(){
+		    	showContactDetails(this.params['contactId']);
+			});
+    		    
+			Path.listen();    
+    </script>
+</head>
+
+<body>
+    
+    <div id="mainContainer">
+    </div>
+    
+</body>             
+</apex:page>
