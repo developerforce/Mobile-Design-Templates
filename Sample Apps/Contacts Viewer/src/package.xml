@@ -9,7 +9,6 @@
         <name>ApexPage</name>
     </types>
     <types>
-        <members>Mobile_Design_Templates</members>
         <members>path_js</members>
         <members>underscore_1_5_1</members>
         <name>StaticResource</name>
