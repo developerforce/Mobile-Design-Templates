@@ -78,3 +78,7 @@ Step 4: Copy the files in Step #2 and one of the templates and refer JS, CSS, Im
  
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/developerforce/mobile-design-templates/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
