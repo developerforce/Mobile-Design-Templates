@@ -17,7 +17,7 @@ Gallery
 Check out the Mobile [Design Templates Gallery](https://github.com/developerforce/Mobile-Design-Templates/wiki/Gallery) for a quick look at all the templates included in this repo.
 
 
-#Getting Started
+# Getting Started
 ## Visualforce
 Step 1. `git clone https://github.com/developerforce/Mobile-Design-Templates.git` or Download it as Zip by clicking on Download ZIP button. If you have downloaded it as a ZIP file, unzip it.
 
